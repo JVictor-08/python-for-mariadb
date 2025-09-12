@@ -1,0 +1,37 @@
+import mariadb
+
+
+try:
+    conn = mariadb.connect(
+        user="",
+        password="",
+        host="",
+        port=,
+        database=""
+    )
+    print("Conexão bem-sucedida!")
+except mariadb.Error as e:
+    print(f"Erro ao conectar: {e}")
+    exit()
+
+
+cursor = conn.cursor()
+
+
+try:
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS clientes (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            nome VARCHAR(100) NOT NULL,
+            email VARCHAR(100) NOT NULL,
+            telefone VARCHAR(20) NOT NULL,
+            data_cadastro DATE NOT NULL
+        )
+    """)
+    conn.commit()
+    print("Tabela 'clientes' criada com sucesso!")
+except mariadb.Error as e:
+    print(f"Erro ao criar tabela: {e}")
+
+
+conn.close()
