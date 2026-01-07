@@ -6,7 +6,7 @@ try:
         user="",
         password="",
         host="",
-        port=,
+        port="",
         database=""
     )
     print("Conexão bem-sucedida!")
