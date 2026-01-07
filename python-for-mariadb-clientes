@@ -20,7 +20,7 @@ cursor = conn.cursor()
 
 try:
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS clientes (
+        CREATE TABLE IF NOT EXISTS nome_da_tabela (
             id INT PRIMARY KEY AUTO_INCREMENT,
             nome VARCHAR(100) NOT NULL,
             email VARCHAR(100) NOT NULL,
